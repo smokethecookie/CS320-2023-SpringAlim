@@ -6,13 +6,6 @@ fun isPrime(n0: int): bool
 *)
 
 fun isPrime(n0: int) bool =
-    let val 
-    
-    if n0 mod 2 = 1
-    then
-        true
-    if 
+    let val itr = (sqrt n0) + 1
     
     
-    else
-        false
