@@ -1,0 +1,48 @@
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+- [opening ./../MySolution/assign00-01.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+val fact = fn : int -> int
+val checkOverflow = fn : int -> int
+val N = 21 : int
+val it = () : unit
+= 
+uncaught exception Error
+  raised at: stdIn:14.25-14.30
+- 
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+- [opening ./../MySolution/assign00-02.sml]
+val isPrime = fn : int -> bool
+val it = () : unit
+= Assign00-02-test passed!
+
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+- [opening ./../MySolution/assign00-03.sml]
+val int2str = fn : int -> string
+val it = () : unit
+= Assign00-03-test passed!
+
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+- [opening ./../MySolution/assign00-04.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+val helper = fn : char list -> int
+val str2int = fn : string -> int
+val it = () : unit
+= Assign00-04-test passed!
+
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+- [opening ./../MySolution/assign00-05.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+val helperReverse = fn : char list -> string
+val stringrev = fn : string -> string
+val it = () : unit
+= Assign00-05-test passed!
+
