@@ -5,13 +5,22 @@ a given string:
 fun stringrev(cs: string): string
 *)
 
+fun helperReverse(cs: char list): string = 
+    let 
+        val ch = List.nth(cs, 0)
+    in
+        if List.length(cs) = 1
+            then    
+                str(ch)
+        else
+            helperReverse(List.drop(cs, 1): char list) ^ str(ch)
+    end
+
 fun stringrev(cs: string): string =
     let
-        val strlen = String.size(cs)
     in
-      if strlen = 0
-    then
-        cs
-    else
-        stringrev(String.extract(cs, 1, NONE)) ^ str(String.sub(cs, 0))
+        if String.size(cs) < 1
+            then ""
+        else
+            helperReverse(explode cs)
     end
