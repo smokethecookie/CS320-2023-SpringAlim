@@ -14,5 +14,5 @@ In particular, your implementation should guarantee:
 3. 'xs' and 'ys' use the same number of 'mylist_append'
 //
 *)
-
+use "./../assign01.sml";
 fun xlist_remove_reverse(xs: 'a xlist): 'a xlist =

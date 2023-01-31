@@ -18,3 +18,5 @@ the digit '0' can be a leading digit).
 fun str2int_opt(cs: string): int option
 //
 *)
+
+use "./assign01.sml";
