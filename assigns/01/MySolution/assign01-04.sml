@@ -19,6 +19,25 @@ fun str2int_opt(cs: string): int option
 //
 *)
 
+val ord = Char.ord;
+val strsub = String.sub;
+val strlen = String.size;
 
+fun converter(cs: string, i: int, x: int): int option = 
+    (
+        if i >= strlen(cs) 
+            then SOME(x)
+        else if ord(strsub(cs, i)) <= 57 andalso ord(strsub(cs, i)) >= 48
+            then converter(cs, i+1, x*10 + ord(strsub(cs, i)) - 48)
+        else
+            NONE
+    )
+fun str2int_opt(cs: string): int option = 
+    (
+        if strlen(cs) = 0 
+            then NONE
+        else
+            converter(cs, 0, 0)
+    )
 
 
