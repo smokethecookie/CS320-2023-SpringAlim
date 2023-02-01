@@ -20,16 +20,22 @@ use "./../MySolution/assign01-01.sml";
 
 fun xlist_sub(xs: 'a xlist, i0: int): 'a = 
     (
-    case xs of
-    xlist_nil => raise XlistSubscript
-    |
-    xlist_cons(x1, ys) => if i0=0 then x1 else xlist_sub(ys, i0-1)
-    |
-    xlist_snoc(ys, x1) => if i0+1 = xlist_size(xs) then x1 else xlist_sub(ys, i0)
-    |
-    xlist_append(ys, zs) => if i0<xlist_size(ys) then xlist_sub(ys, i0) else xlist_sub(zs, i0-xlist_size(ys))
-    |
-    xlist_reverse(ys) => xlist_sub(ys, xlist_size(xs)-1-i0)
+    let
+        val size_xs = xlist_size(xs)
+        val () = if (i0 < 0 orelse i0 > size_xs-1) 
+            then raise XlistSubscript else ()
+    in
+        case xs of
+        xlist_nil => raise XlistSubscript
+        |
+        xlist_cons(x1, ys) => if i0=0 then x1 else xlist_sub(ys, i0-1)
+        |
+        xlist_snoc(ys, x1) => if i0+1 = size_xs then x1 else xlist_sub(ys, i0)
+        |
+        xlist_append(ys, zs) => if i0<xlist_size(ys) then xlist_sub(ys, i0) else xlist_sub(zs, i0-xlist_size(ys))
+        |
+        xlist_reverse(ys) => xlist_sub(ys, size_xs-1-i0)
+    end
     )
     
 

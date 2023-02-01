@@ -16,3 +16,15 @@ In particular, your implementation should guarantee:
 *)
 use "./../assign01.sml";
 fun xlist_remove_reverse(xs: 'a xlist): 'a xlist =
+    (
+    case xs of
+    xlist_nil => 
+    |
+    xlist_cons(x1, ys) => 
+    |
+    xlist_snoc(ys, x1) => 
+    |
+    xlist_append(xs, ys) => 
+    |
+    xlist_reverse(ys) => 
+    )

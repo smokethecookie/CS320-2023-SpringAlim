@@ -19,4 +19,27 @@ fun str2int_opt(cs: string): int option
 //
 *)
 
-use "./assign01.sml";
+
+(* fun helper(cs: char list): int option =
+    let
+        val ch = List.nth(cs, 0)
+    in
+        if Char.ord(ch) < 48 
+            then NONE
+        else if Char.ord(ch) > 57
+            then NONE
+        else if List.length(cs) = 1
+            then   
+                Char.ord(ch) - Char.ord(#"0")
+        else    
+            helper(List.drop(cs, 1): char list)
+            + (valOf((Char.ord(ch) - Char.ord(#"0"))) * Real.floor(Math.pow(10.0, Real.fromInt(List.length(cs) - 1))))
+    end
+
+fun str2int_opt(cs: string): int option = 
+    let
+    in
+        helper(explode cs)
+        handle NONE => NONE
+    end *)
+
