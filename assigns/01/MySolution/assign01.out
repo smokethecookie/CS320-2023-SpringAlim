@@ -216,3 +216,18 @@ val ys =
        (2,xlist_snoc (xlist_append (xlist_snoc (#,#),xlist_snoc (#,#)),1)))
   : int xlist
 - 
+Standard ML of New Jersey (64-bit) v110.99.3 [built: Thu Jul 28 00:35:16 2022]
+[opening assign01-04-test.sml]
+[opening ./../MySolution/assign01-04.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+val ord = fn : char -> int
+val strsub = fn : string * int -> char
+val strlen = fn : string -> int
+val converter = fn : string * int * int -> int option
+val str2int_opt = fn : string -> int option
+val it = () : unit
+Assign01-04-test passed!
+- 
