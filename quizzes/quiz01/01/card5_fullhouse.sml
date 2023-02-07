@@ -178,6 +178,26 @@ card5_fullhouse(cs: card5): bool =
 Please Give your implementation as follows:
 *)
 
+  let
+    val x1 = rank2int(card_rank(#1(cs)))
+    val x2 = rank2int(card_rank(#2(cs)))
+    val x3 = rank2int(card_rank(#3(cs)))
+    val x4 = rank2int(card_rank(#4(cs)))
+    val x5 = rank2int(card_rank(#5(cs)))
+
+    val deck = (x1, x2, x3, x4, x5)
+    val order = int5_sort(deck)
+  in
+    (* Option 1: 2-3 *)
+    if (#1(order) = #2(order)) andalso (#3(order) = #4(order)) andalso (#4(order) = #5(order)) andalso (#2(order) <> #3(order))
+      then true
+    (* Option 2: 3-2 *)
+    else if (#1(order) = #2(order)) andalso (#2(order) = #3(order)) andalso (#4(order) = #5(order)) andalso (#3(order) <> #4(order))
+      then true
+    else
+      false
+  end
+
 (* ****** ****** *)
 
 (* end of [CS320-2023-Spring-quiz01-card5_fullhouse.sml] *)
