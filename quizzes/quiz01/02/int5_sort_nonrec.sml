@@ -54,6 +54,30 @@ int5_sort_nr(xs: int5): int5 =
 (*
 Please Give your implementation as follows:
 *)
+  let 
+    val x1 = (#1(xs))
+    val x2 = (#2(xs))
+    val x3 = (#3(xs))
+    val x4 = (#4(xs))
+    val x5 = (#5(xs))
+  
+  in 
+    Int.compare(x1, x2)
+    Int.compare(x1, x3)
+    Int.compare(x1, x4)
+    Int.compare(x1, x5)
+
+    Int.compare(x2, x3)
+    Int.compare(x2, x4)
+    Int.compare(x2, x5)
+
+    Int.compare(x3, x4)
+    Int.compare(x3, x5)
+
+    Int.compare(x4, x5)
+
+    (x1, x2, x3, x4, x5)
+  end
 
 
 (* ****** ****** *)
