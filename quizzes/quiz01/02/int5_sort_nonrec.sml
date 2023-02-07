@@ -60,26 +60,63 @@ Please Give your implementation as follows:
     val x3 = (#3(xs))
     val x4 = (#4(xs))
     val x5 = (#5(xs))
-  
-  in 
-    Int.compare(x1, x2)
-    Int.compare(x1, x3)
-    Int.compare(x1, x4)
-    Int.compare(x1, x5)
 
-    Int.compare(x2, x3)
-    Int.compare(x2, x4)
-    Int.compare(x2, x5)
-
-    Int.compare(x3, x4)
-    Int.compare(x3, x5)
-
-    Int.compare(x4, x5)
-
-    (x1, x2, x3, x4, x5)
-  end
-
-
+    fun int2sort(cs: int2): int2 =
+      let
+        val c1 = (#1(cs))
+        val c2 = (#2(cs))
+      in
+        if c1 > c2
+          then (c2, c1)
+        else
+          (c1, c2)
+      end
+    fun combine(left: int2, right: int2): int4 =
+      let
+        val l1 = #1(left)
+        val l2 = #2(left)
+        val r1 = #1(right)
+        val r2 = #2(right) 
+      in
+        if r1 > l1
+        then 
+          if r1 > l2
+          then (l1, l2, r1, r2)
+          else
+            if r2 > l2
+            then (l1, r1, l2, r2)
+            else (l1, r1, r2, l2)
+        else
+          if l1 > r2
+          then (r1, r2, l1, l2)
+          else 
+            if l2 > r2
+            then (r1, l1, r2, l2)
+            else (r1, l1, l2, r2)
+      end
+      fun helper(fs: int4, x5: int): int5 =
+        let
+          val f1 = #1(fs)
+          val f2 = #2(fs)
+          val f3 = #3(fs)
+          val f4 = #4(fs)
+        in
+          if x5 > f4
+          then (f1, f2, f3, f4, x5)
+          else
+            if x5 > f3
+            then (f1, f2, f3, x5, f4)
+            else
+              if x5 > f2
+              then (f1, f2, x5, f3, f4)
+              else
+                if x5 > f1
+                then (f1, x5, f2, f3, f4)
+                else (x5, f1, f2, f3, f4)
+        end
+    in
+      helper(combine(int2sort((x1, x2)),int2sort((x3, x4))), x5)
+    end
 (* ****** ****** *)
 
 (* end of [CS320-2023-Spring-quiz01-int5_sort_nonrec.sml] *)
